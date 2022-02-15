@@ -2,7 +2,7 @@ import discord
 import requests
 from discord.ext import commands
 
-API_KEY = "apikey"
+API_KEY = "apikey" #do /api new on hypixel
 c = requests.get(f"https://api.hypixel.net/skyblock/bazaar?key={API_KEY}").json()
 
 client = commands.Bot(command_prefix = '!b ')
@@ -12,7 +12,6 @@ async def on_ready():
     print("Ready!")
 
 @client.command()
-
 async def commands(ctx):
     await ctx.channel.send(f"<@{ctx.author.id}>\n*List Of Commands*\n!b help (assists on how to use !b search)\n!b search <item_name>")
 
@@ -46,7 +45,7 @@ async def search(ctx,text):
         elif ftext == "ENCHANTED_RAW_RABBIT":
             ftext = "ENCHANTED_RABBIT"
         elif ftext == "NETHER_WART":
-            ftext == "NETHER_STALK"
+            ftext = "NETHER_STALK"
         elif ftext == "GUNPOWDER":
             ftext = "SULPHUR"
         elif ftext == "SLIMEBALL":
@@ -112,7 +111,7 @@ async def search(ctx,text):
         elif ftext == "YOUNG_DRAGON_FRAGMENT":
             ftext = "YOUNG_FRAGMENT"
         elif ftext == "WISE_DRAGON_FRAGMENT":
-            ftext = "WISE_FRAAGMENT"
+            ftext = "WISE_FRAGMENT"
         elif ftext == "SUPERIOR_DRAGON_FRAGMENT":
             ftext = "SUPERIOR_FRAGMENT"
         elif ftext == "ENCHANTED_CARROT_ON_A_STICK":
