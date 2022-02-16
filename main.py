@@ -29,7 +29,7 @@ async def search(ctx,text):
         elif ftext == "RED_MUSHROOM_BLOCK":
             ftext = "HUGE_MUSHROOM_2"
         elif ftext == "ENCHANTED_RED_MUSHROOM_BLOCK":
-            ftext == "ENCHANTED_HUGE_MUSHROOM_2"
+            ftext = "ENCHANTED_HUGE_MUSHROOM_2"
         elif ftext == "BROWN_MUSHROOM_BLOCK":
             ftext = "HUGE_MUSHROOM_1"
         elif ftext == "ENCHANTED_BROWN_MUSHROOM_BLOCK":
