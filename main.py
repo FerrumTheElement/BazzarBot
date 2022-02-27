@@ -14,7 +14,7 @@ async def on_ready():
     print("Ready!")
 @client.command()
 async def search(ctx,text):
-  await list.search(ctx,text)
+  await commandfile.search(ctx,text)
 
 
     
