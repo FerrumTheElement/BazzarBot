@@ -1,10 +1,8 @@
 import requests
-import list
+import commandfile
 from discord.ext import commands
 
-
-
-API_KEY = "cd6d59c7-811a-45de-a5b2-76af30a3e719"
+API_KEY = "YOUR_API"
 c = requests.get(f"https://api.hypixel.net/skyblock/bazaar?key={API_KEY}").json()
 
 client = commands.Bot(command_prefix = '!b ')
@@ -16,6 +14,4 @@ async def on_ready():
 async def search(ctx,text):
   await commandfile.search(ctx,text)
 
-
-    
-client.run('OTQyOTkxNTQ4MTM4Nzk1MDQ4.YgsjUQ.GIzrLAQDVWL5-8M4Qyyb7NoKCBk',bot=True, reconnect=True)
+client.run('token',bot=True, reconnect=True)
