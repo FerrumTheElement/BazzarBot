@@ -13,7 +13,7 @@ async def search(ctx, text):
 # to remove case sensitive
 #==========================================================================================
     if ftext == "POTATO":
-        ftext = "ITEM_POTATO"
+        ftext = "POTATO_ITEM"
     elif ftext == "RED_MUSHROOM_BLOCK":
         ftext = "HUGE_MUSHROOM_2"
     elif ftext == "ENCHANTED_RED_MUSHROOM_BLOCK":
@@ -25,7 +25,7 @@ async def search(ctx, text):
     elif ftext == "COCOA_BEANS":
         ftext = "INK_SACK:3"
     elif ftext == "ENCHANTED_COCOA_BEAN":
-            ftext = "ENCHANTED_COCOA"
+        ftext = "ENCHANTED_COCOA"
     elif ftext == "RAW_PORKCHOP":
         ftext = "PORK"
     elif ftext == "RAW_RABBIT":
