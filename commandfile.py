@@ -2,9 +2,6 @@ from discord.ext import commands
 import requests
 import discord
 
-
-# rounding off by 2 decimal places
-
 API_KEY = "YOUR API"
 c = requests.get(f"https://api.hypixel.net/skyblock/bazaar?key={API_KEY}").json()
 
