@@ -1,9 +1,6 @@
 from discord.ext import commands
 import requests
 
-
-# rounding off by 2 decimal places
-
 API_KEY = "YOUR_API"
 c = requests.get(f"https://api.hypixel.net/skyblock/bazaar?key={API_KEY}").json()
 
@@ -13,8 +10,8 @@ async def on_message(message):
 @commands.command()
 async def search(ctx, text):
     ftext = text.upper()
-        # to remove case sensitive
-        #==========================================================================================
+# to remove case sensitive
+#==========================================================================================
     if ftext == "POTATO":
         ftext = "ITEM_POTATO"
     elif ftext == "RED_MUSHROOM_BLOCK":
@@ -203,13 +200,15 @@ async def search(ctx, text):
         ftext = "ARACHNE_KEEPER_FRAGMENT"
     elif ftext == "CHEESE":
         ftext = "CHEESE_FUEL"
-    
+    #====================================================================
+    #Conversion of item name to item_id 
     sell_price = c["products"][ftext]["quick_status"]["sellPrice"]
     buy_price = c["products"][ftext]["quick_status"]["buyPrice"]
     finalx = round(sell_price, 2)
     finaly = round(buy_price, 2)
-    
+    # to round things off to 2 decimal numbers
     await ctx.channel.send(f"<@{ctx.author.id}>```\n*{ftext}*\nSell Price: ${finalx}\nBuy Price: ${finaly}```")
+    #send text
 
 
       
