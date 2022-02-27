@@ -4,7 +4,7 @@ import requests
 
 # rounding off by 2 decimal places
 
-API_KEY = "cd6d59c7-811a-45de-a5b2-76af30a3e719"
+API_KEY = "YOUR_API"
 c = requests.get(f"https://api.hypixel.net/skyblock/bazaar?key={API_KEY}").json()
 
 async def on_message(message):
