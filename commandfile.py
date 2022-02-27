@@ -1,7 +1,11 @@
 from discord.ext import commands
 import requests
+import discord
 
-API_KEY = "YOUR_API"
+
+# rounding off by 2 decimal places
+
+API_KEY = "YOUR API"
 c = requests.get(f"https://api.hypixel.net/skyblock/bazaar?key={API_KEY}").json()
 
 async def on_message(message):
@@ -10,8 +14,8 @@ async def on_message(message):
 @commands.command()
 async def search(ctx, text):
     ftext = text.upper()
-# to remove case sensitive
-#==========================================================================================
+        # to remove case sensitive
+        #==========================================================================================
     if ftext == "POTATO":
         ftext = "POTATO_ITEM"
     elif ftext == "RED_MUSHROOM_BLOCK":
@@ -200,15 +204,20 @@ async def search(ctx, text):
         ftext = "ARACHNE_KEEPER_FRAGMENT"
     elif ftext == "CHEESE":
         ftext = "CHEESE_FUEL"
-    #====================================================================
-    #Conversion of item name to item_id 
+#==========================================================
+#Converts visible itemname into item_id so that the hypixel api can read it
     sell_price = c["products"][ftext]["quick_status"]["sellPrice"]
     buy_price = c["products"][ftext]["quick_status"]["buyPrice"]
+    buy_orderprice = c["products"][ftext]["buy_summary"][0]["pricePerUnit"]
+    sell_orderprice = c["products"][ftext]["sell_summary"][0]["pricePerUnit"]
+#requests things to the hypixel api
     finalx = round(sell_price, 2)
     finaly = round(buy_price, 2)
-    # to round things off to 2 decimal numbers
-    await ctx.channel.send(f"<@{ctx.author.id}>```\n*{ftext}*\nSell Price: ${finalx}\nBuy Price: ${finaly}```")
-    #send text
+    title_text = text.title()
+#just making it look nice :)
+    embed=discord.Embed(title=f"Price info for {title_text}", description=f"Sell Price: ${finalx}\nSell OrderPrice: ${sell_orderprice}\n\nBuy Price: ${finaly}\nBuy OrderPrice: ${buy_orderprice}", color=discord.Color.blue())
+    await ctx.channel.send(embed=embed)
+    #sends text
 
 
       
