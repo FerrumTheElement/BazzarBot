@@ -9,10 +9,14 @@ async def on_message(message):
   print(message.content)
 
 @commands.command()
-async def search(ctx, text):
-    ftext = text.upper()
+async def search(ctx, *text):
+# *text is to store multiple arguments into one variable thing
+    text = ' '.join(text)
+    NoSpaces = text.replace(" ","_")
+# remove unecessary spaces
+    ftext = NoSpaces.upper()
         # to remove case sensitive
-        #==========================================================================================
+#==========================================================================================
     if ftext == "POTATO":
         ftext = "POTATO_ITEM"
     elif ftext == "RED_MUSHROOM_BLOCK":
