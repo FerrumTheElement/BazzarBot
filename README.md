@@ -1,5 +1,5 @@
 # TachiBot
-Simple bot that tracks prices of items in the bazzar using a discord bot using the skyblock api for hypixel skyblock. Just created this for fun ngl.
+Simple bot that tracks prices of items in the bazzar using a discord bot using the skyblock api for hypixel skyblock.
 
 
 
@@ -13,8 +13,6 @@ Simple bot that tracks prices of items in the bazzar using a discord bot using t
 
 
 
-How to use commands:
+# How to use Bot:
 
-replace spaces with "_" for example !b search oak_wood.
-
-Fill "token" with your discord bot token and API_KEY with your own api key.
+Fill "token" with your discord bot token and "YOUR API" with your own api key.
